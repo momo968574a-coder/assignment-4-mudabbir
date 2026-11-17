@@ -1,0 +1,145 @@
+/* لوجو النافبار: مخفي على الشاشات الكبيرة */
+.nav-mobile-brand {
+  display: none;
+}
+
+/* ===== تابلت ===== */
+@media (max-width: 1100px) {
+
+  .panels {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "activities bills"
+      "transactions transactions";
+  }
+
+  .overview {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "budget   chart"
+      "budget   summary"
+      "payments payments";
+  }
+
+  .pay-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .stat-value {
+    font-size: 28px;
+  }
+}
+
+/* ===== موبايل ===== */
+@media (max-width: 768px) {
+
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "nav"
+      "main";
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .nav {
+    padding: 12px;
+  }
+
+  .dashboard {
+    padding: 4px 12px 24px;
+    overflow-y: visible;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .nav-brand {
+    display: contents;
+  }
+
+  .nav-mobile-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    order: 1;
+  }
+
+  .nav-mobile-brand .nav-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .brand-name {
+    font-size: 22px;
+  }
+
+  .nav-left {
+    order: 2;
+  }
+
+  .profile {
+    margin-inline-start: auto;
+  }
+
+  .status {
+    order: 3;
+    justify-content: center;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .panels {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "activities"
+      "transactions"
+      "bills";
+    gap: 16px;
+  }
+
+  .overview {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "budget"
+      "chart"
+      "summary"
+      "payments";
+    gap: 16px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .transactions {
+    overflow-x: auto;
+  }
+
+  .tx-head,
+  .tx-row {
+    min-width: 640px;
+  }
+
+  .pay-list {
+    display: flex;
+    flex-direction: column;
+  }
+}
